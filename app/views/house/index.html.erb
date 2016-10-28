@@ -6,4 +6,24 @@
 <p>The input is: {{name}}</p>
 
 
+
+
+<section>
+	<ul class="nav nav-tabs">
+	<li class="active"><a href="#">Yard</a></li>
+	<li><a href="#">Living Room</a></li>
+	<li><a href="#">Kitchen</a></li>
+	<li><a href="#">Bathroom</a></li>
+	<li><a href="#">Bedroom</a></li>
+	</ul>
+</section>
+<div class="pane">
+	<ul>
+	<% @house.each do |house| %> 
+	<li><%= house.item %> is found in the <%= house.room %></li>
+	<% end %> 
+	</ul>
+
+</div>
+
 </div>
