@@ -1,1 +1,6 @@
-var app = angular.module('house', [ ]);
+(function(){
+	var app = angular.module('house', [ ]);
+
+
+
+})();
