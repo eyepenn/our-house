@@ -15,9 +15,18 @@ body {
 #main {
 	padding:40px;
 }
-
+#left {
+	width:240px;
+	float:left;
+	}
+#right {
+	float:left;
+}
+#clear_left {
+	clear:left;
+}
 .nav-tabs {
-  width:500px;
+	width:500px;
 }
 .nav > li > a {
     background-color: #dedede;
@@ -40,7 +49,7 @@ body {
 	border-radius:3px;
 }
 .pane ul {
-	margin:0px;
+	margin:0px 0 0 10px;
 	padding:0px;
 	list-style-type:none;
 }

@@ -42,3 +42,6 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '>= 3.2'
 gem 'sprockets', '2.11.0'
 gem 'rubocop', '~> 0.44.1', require: false
+group :development, :test do
+	gem 'rspec-rails', '~> 3.0'
+end

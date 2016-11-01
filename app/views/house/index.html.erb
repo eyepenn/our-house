@@ -1,29 +1,45 @@
-<div id="main" ng-app="">
+<div id="main">
+
+	<div id="left">
+		<p>Add an item:</p>
+		<p>What: <input type="text" ng-model="name"></p>
+		Where: <select ng-model="place">
+		<option value="Yard" selected>Yard</option>
+		<option value="Living Room">Living Room</option>
+		<option value="Kitchen">Kitchen</option>
+		<option value="Bathroom">Bathroom</option>
+		<option value="Bedroom">Bedroom</option>
+		</select>							
+		<p>The item is: {{name}}</p>
+		<p>The place is: {{place}}</div>
 
 
-<p>Input something in the text box:</p>
-<p><input type="text" ng-model="name"></p>
-<p>The input is: {{name}}</p>
-
-
-
-
-<section>
-	<ul class="nav nav-tabs">
-	<li class="active"><a href="#">Yard</a></li>
-	<li><a href="#">Living Room</a></li>
-	<li><a href="#">Kitchen</a></li>
-	<li><a href="#">Bathroom</a></li>
-	<li><a href="#">Bedroom</a></li>
-	</ul>
-</section>
-<div class="pane">
-	<ul>
-	<% @house.each do |house| %> 
-	<li><%= house.item %> is found in the <%= house.room %></li>
-	<% end %> 
-	</ul>
-
-</div>
-
+	<div id="right">
+	<section>
+		<ul class="nav nav-tabs">
+		<li class="active"><a href="#">Yard</a></li>
+		<li><a href="#">Living Room</a></li>
+		<li><a href="#">Kitchen</a></li>
+		<li><a href="#">Bathroom</a></li>
+		<li><a href="#">Bedroom</a></li>
+		</ul>
+	</section>
+	<div class="pane" id="yard">
+		<b>There are <%= @yard.count %> items</b>
+		<ul>
+		<% @yard.each do |yard| %> 
+		<li><%= yard.item %></li>
+		<% end %> 
+		</ul>
+	</div>
+	<div class="pane" id="living">
+		<b>There are <%= @living.count %> items</b>
+		<ul>
+		<% @living.each do |living| %> 
+		<li><%= living.item %></li>
+		<% end %> 
+		</ul>
+	</div>
+	</div>
+	<div id="clear_left"></div>
 </div>
