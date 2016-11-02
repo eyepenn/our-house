@@ -16,37 +16,57 @@ body {
 	padding:40px;
 }
 #left {
-	width:240px;
+	width:200px;
+	margin-right:60px;
 	float:left;
 	}
+h4 {
+	margin:0px 0 12px 0;
+}
 #right {
 	float:left;
 }
-#clear_left {
+.clear_left {
 	clear:left;
+}
+.button {
+	text-align:right;
+}
+.btn {
+	margin:10px 8px 0 0;
+}
+.form-inline .form-control {
+    width: 143px;
 }
 .nav-tabs {
 	width:500px;
+	border-bottom:1px solid #949494;
+	margin-top:32px;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    border: 1px solid #949494;
+    border-bottom-color: transparent;
 }
 .nav > li > a {
     background-color: #dedede;
     color:#000;
     line-height:1.0;
-}
-.nav > li > a:hover, .nav > li > a:focus {
-    background-color: #d7d7d7;
-}
-.nav-tabs > li > a {
+    border-color:#949494;
     margin-right: 4px;
 }
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: #cbcbcb;
+	border-color:#949494;
+}
+
 .panel {
 	width:500px;
 	padding:14px;
 	background-color:#FFFFFF;
 	border-width:0px 1px 1px 1px;
-	border-color:#DDDDDD;
+	border-color:#949494;
 	border-style:solid;
-	border-radius:3px;
+	border-radius:0px 0px 3px 3px;
 }
 .panel ul {
 	margin:0px 0 0 10px;

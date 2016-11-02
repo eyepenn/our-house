@@ -1,18 +1,24 @@
 <div id="main">
 
-	<div id="left">
-		<p>Add an item:</p>
-		<p>What: <input type="text" ng-model="name"></p>
-		Where: <select ng-model="place">
-		<option value="Yard" selected>Yard</option>
-		<option value="Living Room">Living Room</option>
-		<option value="Kitchen">Kitchen</option>
-		<option value="Bathroom">Bathroom</option>
-		<option value="Bedroom">Bedroom</option>
-		</select>							
-		<p>The item is: {{name}}</p>
-		<p>The place is: {{place}}</div>
-
+	<div id="left" class="form-group">
+		<h4>Add an item:</h4>
+		<form role="form" class="form-inline">
+		<p><label>What:</label> <input type="text" ng-model="name"></p>
+		<label>Where:</label> <select class="form-control select_box" ng-model="place" ng-init="place=yard"><option value ="" disabled ng-selected="true">Choose one</option>
+		<option value="yard">Yard</option>
+		<option value="living">Living Room</option>
+		<option value="kitchen">Kitchen</option>
+		<option value="bath">Bathroom</option>
+		<option value="bed">Bedroom</option>
+		</select>
+		<div class="button"><button class="btn btn-primary">Submit</button></div>
+		</form>
+		<br /><br />
+		<h4>Search for an item:</h4>
+		<form role="form" class="form-inline">
+		<p><label>What:</label> <input type="text" ng-model="search"></p>
+		</form>
+	</div>
 
 	<div id="right">
 	<section ng-init="tab = 1">
@@ -65,5 +71,5 @@
 		</ul>
 	</div>
 	</div>
-	<div id="clear_left"></div>
+	<div class="clear_left"></div>
 </div>
