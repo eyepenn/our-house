@@ -1,6 +1,6 @@
-class CreateHouses < ActiveRecord::Migration
+class CreateThings < ActiveRecord::Migration
   def change
-    create_table :houses do |t|
+    create_table :things do |t|
       t.string :item
       t.string :room
       t.timestamps

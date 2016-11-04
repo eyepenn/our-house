@@ -21,6 +21,12 @@
 	</div>
 
 	<div id="right">
+	<ul>
+		<li ng-repeat="thing in things">
+			<span>{{thing.item}}</span>
+			<p>{{thing.room}}</p>
+		</li>
+	</ul>
 	<section ng-init="tab = 1">
 		<ul class="nav nav-tabs">
 		<li ng-class="{ active:tab === 1 }"><a href ng-click="tab = 1">Yard</a></li>
@@ -31,44 +37,19 @@
 		</ul>
 	</section>
 	<div class="panel" ng-show="tab === 1">
-		<b>There are <%= @yard.count %> items in the yard</b>
-		<ul>
-		<% @yard.each do |yard| %> 
-		<li><%= yard.item %></li>
-		<% end %> 
-		</ul>
+		<b>There are 0 items in the yard</b>
 	</div>
 	<div class="panel" ng-show="tab === 2">
-		<b>There are <%= @living.count %> items in the living room</b>
-		<ul>
-		<% @living.each do |living| %> 
-		<li><%= living.item %></li>
-		<% end %> 
-		</ul>
+		<b>There are 0 items in the living room</b>
 	</div>
 	<div class="panel" ng-show="tab === 3">
-		<b>There are <%= @kitchen.count %> items in the kitchen</b>
-		<ul>
-		<% @kitchen.each do |kitchen| %> 
-		<li><%= kitchen.item %></li>
-		<% end %> 
-		</ul>
+		<b>There are 0 items in the kitchen</b>
 	</div>
 	<div class="panel" ng-show="tab === 4">
-		<b>There are <%= @bath.count %> items in the bathroom</b>
-		<ul>
-		<% @bath.each do |bath| %> 
-		<li><%= bath.item %></li>
-		<% end %> 
-		</ul>
+		<b>There are 0 items in the bathroom</b>
 	</div>
 	<div class="panel" ng-show="tab === 5">
-		<b>There are <%= @bed.count %> items in the bedroom</b>
-		<ul>
-		<% @bed.each do |bed| %> 
-		<li><%= bed.item %></li>
-		<% end %> 
-		</ul>
+		<b>There are 0 items in the bedroom</b>
 	</div>
 	</div>
 	<div class="clear_left"></div>

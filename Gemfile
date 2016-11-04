@@ -45,4 +45,5 @@ gem 'sprockets', '2.11.0'
 gem 'rubocop', '~> 0.44.1', require: false
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails', '~> 4.0'
 end
