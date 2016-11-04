@@ -12,10 +12,11 @@
     "type": "git",
     "url": "git+https://github.com/eyepenn/our-house.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/eyepenn/our-house/issues"
   },
-  "homepage": "https://github.com/eyepenn/our-house#readme"
+  "homepage": "https://github.com/eyepenn/our-house"
 }
