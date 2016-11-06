@@ -1,32 +1,22 @@
 <div id="main">
-
 	<div id="left" class="form-group">
 		<h4>Add</h4>
-		<form role="form" class="form-inline">
-		<p><label>Item:</label> <input type="text" ng-model="name"></p>
-		<label>Where:</label> <select class="form-control select_box" ng-model="place" ng-init="place=yard"><option value ="" disabled ng-selected="true">Choose one</option>
+		<form role="form" class="form-inline" ng-submit="submit()">
+		<p><label>Item:</label> <input type="text" ng-model="item"></p>
+		<label>Where:</label> <select class="form-control select_box" ng-model="room"><option value ="" disabled ng-selected="true">Choose one</option>
 		<option value="yard">Yard</option>
 		<option value="living">Living Room</option>
 		<option value="kitchen">Kitchen</option>
 		<option value="bath">Bathroom</option>
 		<option value="bed">Bedroom</option>
 		</select>
-		<div class="button"><button class="btn btn-primary">Submit</button></div>
+		<div class="button"><button class="btn btn-primary" type="submit">Submit</button></div>
 		</form>
-		<br /><br />
 		<h4>Search</h4>
-		<form role="form" class="form-inline">
-		<p><label>Item:</label> <input type="text" ng-model="search"></p>
-		</form>
+		<input type="text" class="search" ng-model="searchString" placeholder="Enter your search terms" />
 	</div>
-
 	<div id="right">
-	<ul>
-		<li ng-repeat="thing in things">
-			<span>{{thing.item}}</span>
-			<p>{{thing.room}}</p>
-		</li>
-	</ul>
+	<p ng-repeat="thing in things">{{thing.item}} - {{thing.room}}</p>
 	<section ng-init="tab = 1">
 		<ul class="nav nav-tabs">
 		<li ng-class="{ active:tab === 1 }"><a href ng-click="tab = 1">Yard</a></li>
@@ -36,19 +26,19 @@
 		<li ng-class="{ active:tab === 5 }"><a href ng-click="tab = 5">Bedroom</a></li>
 		</ul>
 	</section>
-	<div class="panel" ng-show="tab === 1">
+	<div class="panel yard" ng-show="tab === 1">
 		<b>There are 0 items in the yard</b>
 	</div>
-	<div class="panel" ng-show="tab === 2">
+	<div class="panel living" ng-show="tab === 2">
 		<b>There are 0 items in the living room</b>
 	</div>
-	<div class="panel" ng-show="tab === 3">
+	<div class="panel kitchen" ng-show="tab === 3">
 		<b>There are 0 items in the kitchen</b>
 	</div>
-	<div class="panel" ng-show="tab === 4">
+	<div class="panel bath" ng-show="tab === 4">
 		<b>There are 0 items in the bathroom</b>
 	</div>
-	<div class="panel" ng-show="tab === 5">
+	<div class="panel bed" ng-show="tab === 5">
 		<b>There are 0 items in the bedroom</b>
 	</div>
 	</div>

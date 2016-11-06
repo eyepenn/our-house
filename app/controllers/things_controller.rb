@@ -2,4 +2,14 @@ class ThingsController < ApplicationController
   def index
     render json: Thing.all
   end
+
+  def create
+    thing = Thing.create(thing_params)
+  	render json: thing
+  end
+  private
+
+  def thing_params
+  	params.require(:thing).permit(:item, :room)
+  end
 end
