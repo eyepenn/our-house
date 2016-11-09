@@ -1464,9 +1464,9 @@ function encodeUriSegment(val) {
   return encodeUriQuery(val, true).
              replace(/%26/gi, '&').
              replace(/%3D/gi, '=').
-             replace(/%2B/gi, '+');
+             replace(/%2B/gi, '+').
+             replace(/%2F/gi, '/');
 }
-
 
 /**
  * This method is intended for encoding *key* or *value* parts of query component. We need a custom
@@ -1486,6 +1486,7 @@ function encodeUriQuery(val, pctEncodeSpaces) {
              replace(/%24/g, '$').
              replace(/%2C/gi, ',').
              replace(/%3B/gi, ';').
+             replace(/%2F/gi, '/').
              replace(/%20/g, (pctEncodeSpaces ? '%20' : '+'));
 }
 

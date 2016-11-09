@@ -8,9 +8,16 @@ class ThingsController < ApplicationController
   	render json: thing
   end
 
+  def show
+      thing = Thing.find(params[:id])
+      render json: thing
+  end
+
   def destroy
-    thing = Thing.find(params[:id])
-    thing.destroy
+    @thing = Thing.find(params[:id])
+    @thing.destroy
+    flash[:info] = "Item deleted"
+    render json: thing
   end
   private
 

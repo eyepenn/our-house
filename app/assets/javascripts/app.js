@@ -19,8 +19,7 @@ angular.module('house', ['ngResource', 'ngRoute'])
        	 $scope.remove = function(thing, $index) {
 	 			//console.log(thing.id);
 	 			//console.log($index);
-	 			//console.log($scope.record);
-  	  	     Thing.remove({ id: thing.id }, function() {
+			Thing.delete({ id:thing.id }, function(){
 				 $scope.things.splice($index, 1);
      	   	   });
        	 };

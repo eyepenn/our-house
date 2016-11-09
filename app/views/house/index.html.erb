@@ -20,8 +20,11 @@
 	</div>
 	<div id="right">
 	<div class="test">
+	<% if flash[:info] %>
+		<p style="color:red;"><%= flash[:info] %></p>
+	<% end %>
 	<ul>
-		<li ng-repeat="thing in things"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</li>
+	<li ng-repeat="thing in things"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</li>
 	</ul>
 	</div>
 	<section ng-init="tab = 1">
