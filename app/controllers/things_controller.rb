@@ -7,6 +7,11 @@ class ThingsController < ApplicationController
     thing = Thing.create(thing_params)
   	render json: thing
   end
+
+  def destroy
+    thing = Thing.find(params[:id])
+    thing.destroy
+  end
   private
 
   def thing_params

@@ -1,27 +1,30 @@
 (function(){
-	var app = angular.module('House', ['ngResource'])
-	
-	app.factory('House', function($resource) {
-	  return $resource('/things/:id', { id:'@id' });
-	});
 
-	app.controller('ThingsListController', function ($scope, House) {
+angular.module('house', ['ngResource', 'ngRoute'])
+	.controller('ThingsListController', ['$scope', '$resource', function ($scope, $resource) {
+		var Thing = $resource('/things/:id', { id:'@id' });
+ 		 
+ 		 $scope.things = Thing.query();
+ 		 
+ 		 $scope.submit = function() {
+			Thing.save({ item: $scope.item, room: $scope.room }, function() {
+      			$scope.things.push({item:$scope.item, room:$scope.room});
+				$scope.item ='';
+				$scope.room ='';
+   				$scope.addForm.$setPristine();
+   				$scope.addForm.$setUntouched();
+    		});
+       	 };
 
- 		 $scope.things = House.query();
+       	 $scope.remove = function(thing, $index) {
+	 			//console.log(thing.id);
+	 			//console.log($index);
+	 			//console.log($scope.record);
+  	  	     Thing.remove({ id: thing.id }, function() {
+				 $scope.things.splice($index, 1);
+     	   	   });
+       	 };
 
-	});
+	}]);
+
 })();
-
-
-// $scope.submit = function() {
-// 	//   $http({
-//  //            url: '/things',
-//  //            method: "POST",
-//  //            data:{item: $scope.item, room: $scope.room}
-//  //       	 	}).success(function (data, status) {
-// 	// 			$route.reload();
-//  //            }).error(function (data, status) {
-//  //                $scope.status = status;
-//  //            });
-            
-// 	// 	}
