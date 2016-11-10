@@ -1461,6 +1461,7 @@ function toKeyValue(obj) {
  *                     / "*" / "+" / "," / ";" / "="
  */
 function encodeUriSegment(val) {
+  console.log('hello');
   return encodeUriQuery(val, true).
              replace(/%26/gi, '&').
              replace(/%3D/gi, '=').

@@ -3,6 +3,7 @@
 angular.module('house', ['ngResource', 'ngRoute'])
 	.controller('ThingsListController', ['$scope', '$resource', function ($scope, $resource) {
 		var Thing = $resource('/things/:id', { id:'@id' });
+		
  		 
  		 $scope.things = Thing.query();
  		 
@@ -19,11 +20,10 @@ angular.module('house', ['ngResource', 'ngRoute'])
        	 $scope.remove = function(thing, $index) {
 	 			//console.log(thing.id);
 	 			//console.log($index);
-			Thing.delete({ id:thing.id }, function(){
+			Thing.delete({ id: thing.id }, function(){
 				 $scope.things.splice($index, 1);
      	   	   });
        	 };
-
 	}]);
 
 })();

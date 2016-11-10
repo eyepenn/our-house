@@ -38,24 +38,24 @@
 	</section>
 	<div class="panel yard" ng-show="tab === 1">
 		<b>There are 0 items in the yard</b>
-		<p ng-repeat="thing in things" ng-show="thing.room == 'Yard'">{{thing.item}} - {{thing.room}}</p>
+		<p ng-repeat="thing in things" ng-show="thing.room === 'Yard'">{{thing.item}} - {{thing.room}}</p>
 	</div>
 	<div class="panel living" ng-show="tab === 2">
 		<b>There are 0 items in the living room</b>
-			<p ng-repeat="thing in things" ng-show="thing.room == 'Living Room'">{{thing.item}} - {{thing.room}}</p>
+			<p ng-repeat="thing in things" ng-show="thing.room === 'Living Room'">{{thing.item}} - {{thing.room}}</p>
 		</ul>
 	</div>
 	<div class="panel kitchen" ng-show="tab === 3">
 		<b>There are 0 items in the kitchen</b>
-		<p ng-repeat="thing in things" ng-show="thing.room == 'Kitchen'">{{thing.item}} - {{thing.room}}</p>
+		<p ng-repeat="thing in things" ng-show="thing.room === 'Kitchen'">{{thing.item}} - {{thing.room}}</p>
 	</div>
 	<div class="panel bath" ng-show="tab === 4">
 		<b>There are 0 items in the bathroom</b>
-		<p ng-repeat="thing in things" ng-show="thing.room == 'Bathroom'">{{thing.item}} - {{thing.room}}</p>
+		<p ng-repeat="thing in things" ng-show="thing.room === 'Bathroom'">{{thing.item}} - {{thing.room}}</p>
 	</div>
 	<div class="panel bed" ng-show="tab === 5">
 		<b>There are 0 items in the bedroom</b>
-		<p ng-repeat="thing in things " ng-show="thing.room == 'Bedroom'">{{thing.item}} - {{thing.room}}</p>
+		<p ng-repeat="thing in things " ng-show="thing.room === 'Bedroom'">{{thing.item}} - {{thing.room}}</p>
 	</div>
 	</div>
 	<div class="clear_left"></div>
