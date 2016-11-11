@@ -1,4 +1,5 @@
 class ThingsController < ApplicationController
+
   def index
     render json: Thing.all
   end
@@ -6,6 +7,7 @@ class ThingsController < ApplicationController
   def create
     thing = Thing.create(thing_params)
   	render json: thing
+
   end
 
   def show
@@ -14,10 +16,10 @@ class ThingsController < ApplicationController
   end
 
   def destroy
-    @thing = Thing.find(params[:id])
-    @thing.destroy
-    flash[:info] = "Item deleted"
+    thing = Thing.find(params[:id])
+    thing.destroy
   end
+
   private
 
   def thing_params

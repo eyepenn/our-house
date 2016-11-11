@@ -16,6 +16,7 @@
 //= require angular
 //= require angular-resource
 //= require angular-route
+//= angular-messages
 //= require app
 //= require turbolinks
 //= require_tree .
