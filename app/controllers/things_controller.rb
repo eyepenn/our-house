@@ -1,18 +1,16 @@
 class ThingsController < ApplicationController
-
   def index
     render json: Thing.all
   end
 
   def create
     thing = Thing.create(thing_params)
-  	render json: thing
-
+    render json: thing
   end
 
   def show
-      thing = Thing.find(params[:id])
-      render json: thing
+    thing = Thing.find(params[:id])
+    render json: thing
   end
 
   def destroy
@@ -23,6 +21,6 @@ class ThingsController < ApplicationController
   private
 
   def thing_params
-  	params.require(:thing).permit(:item, :room)
+    params.require(:thing).permit(:item, :room)
   end
 end

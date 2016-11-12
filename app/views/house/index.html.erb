@@ -13,25 +13,18 @@
 		<div class="button"><button class="btn btn-primary" type="submit">Submit</button></div>
 		</form>
 		<h4>Search</h4>
-		<input type="text" class="search" ng-model="search" />
+		<input type="text" class="search" ng-model="query" />
 		<ul>
-			<li ng-show="search" ng-repeat="thing in things | filter:search" class="results">{{thing.item}} - {{thing.room}}</li>
-			<li ng-if="things.length == 0">No results found</li>
+			<li ng-show="query" ng-repeat="thing in things | filter:search" class="results">{{thing.item}} - {{thing.room}}</li>
 	  	</ul>
 	</div>
 	<div id="right">
 	<div class="test">
 	<div ng-bind="message" class="message">{{thing.warning}}</div>
-	
-	
 	<ul>
-
-
 	<li ng-repeat="thing in things"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</li>
 	<p>{{things.length}}</p>
 	</ul>
-	
-
 	</div>
 	<section ng-init="tab = 1">
 		<ul class="nav nav-tabs">

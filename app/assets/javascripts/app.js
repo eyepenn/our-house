@@ -28,6 +28,13 @@ angular.module('house', ['ngResource', 'ngRoute', 'ngMessages'])
      	   	   });
        	 };
 
+       	 $scope.search = function(thing){
+    		if (!$scope.query || (thing.item.toLowerCase().indexOf($scope.query) != -1) || (thing.room.toLowerCase().indexOf($scope.query.toLowerCase()) != -1) ){
+         		return true;
+   		 	}
+    	 		return false;
+ };
+
       
 	}]);
 

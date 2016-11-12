@@ -14,7 +14,7 @@ RSpec.describe ThingsController, type: :controller do
 
   describe 'things#create' do
     it 'allows new tasks to be created' do
-      post :create, thing: {item: 'Sprinkler', room: 'yard'}
+      post :create, params: { thing: { item: 'Sprinkler', room: 'yard' } }
       expect(response).to have_http_status :success
       response_value = ActiveSupport::JSON.decode(@response.body)
       expect(response_value['item']).to eq('Sprinkler')
