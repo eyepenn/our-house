@@ -20,15 +20,6 @@ body {
 	margin-right:60px;
 	float:left;
 	}
-#left ul {
-	margin:6px 0 0 2px;
-	padding:0px;
-	list-style-type:none;
-}
-#left ul li {
-	margin:0px;
-	padding:0px;
-}	
 h4 {
 	margin:0px 0 12px 0;
 }
@@ -45,7 +36,11 @@ h4 {
 	margin:10px 15px 0 0;
 }
 .results {
-	margin:10px 0 0 6px;
+	margin:4px 0 4px 8px;
+	text-transform:capitalize;
+}
+.search {
+	margin-bottom:6px;
 }
 .message {
 	color:red;
@@ -91,6 +86,7 @@ h4 {
 
 .panel p {
 	margin:4px 0 4px 10px;
+	text-transform:capitalize;
 }
 .test ul {
 	margin:6px 0 0 2px;
@@ -100,6 +96,7 @@ h4 {
 .test ul li {
 	margin:0px;
 	padding:0px;
+	text-transform:capitalize;
 }
 a.red-x, a.red-x:hover, a.red-x:focus {
 	color:red;

@@ -18,8 +18,8 @@ class ThingsController < ApplicationController
     thing = Thing.find(params[:id])
     thing.destroy
     respond_to do |format|
-        format.html { render nothing: true }
-        format.js { render nothing: true }
+      format.html { render nothing: true }
+      format.js
     end
   end
 

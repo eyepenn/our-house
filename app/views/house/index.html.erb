@@ -19,9 +19,7 @@
 		</form>
 		<h4>Search</h4>
 		<input type="text" class="search" ng-model="query" />
-		<ul>
-			<li ng-show="query" ng-repeat="thing in things | filter:search" class="results">{{thing.item}} - {{thing.room}}</li>
-	  	</ul>
+			<p ng-show="query" ng-repeat="thing in things | filter:search" class="results">{{thing.item}} - {{thing.room}}</p>
 	</div>
 	<div id="right">
 	<div class="test">
@@ -40,23 +38,23 @@
 		</ul>
 	</section>
 	<div class="panel" ng-show="tab === 1">
-		<b>There are {{(things|filter:{room:'Yard'}).length}} items in the yard</b>
+		<b>There are {{(things|filter:{room:'Yard'}).length}} items in the Yard</b>
 		<p ng-repeat="thing in things | filter:{room:'Yard'}">{{thing.item}} - {{thing.room}}</p>
 	</div>
 	<div class="panel living" ng-show="tab === 2">
-		<b>There are {{(things|filter:{room:'Living Room'}).length}} items in the living room</b>
+		<b>There are {{(things|filter:{room:'Living Room'}).length}} items in the Living Room</b>
 			<p ng-repeat="thing in things | filter:{room:'Living Room'}">{{thing.item}} - {{thing.room}}</p>
 	</div>
 	<div class="panel kitchen" ng-show="tab === 3">
-		<b>There are {{(things|filter:{room:'Kitchen'}).length}} items in the kitchen</b>
+		<b>There are {{(things|filter:{room:'Kitchen'}).length}} items in the Kitchen</b>
 		<p ng-repeat="thing in things | filter:{room:'Kitchen'}">{{thing.item}} - {{thing.room}}</p>
 	</div>
 	<div class="panel bath" ng-show="tab === 4">
-		<b>There are {{(things|filter:{room:'Bathroom'}).length}} items in the bathroom</b>
+		<b>There are {{(things|filter:{room:'Bathroom'}).length}} items in the Bathroom</b>
 		<p ng-repeat="thing in things | filter:{room:'Bathroom'}">{{thing.item}} - {{thing.room}}</p>
 	</div>
 	<div class="panel bed" ng-show="tab === 5">
-		<b>There are {{(things|filter:{room:'Bedroom'}).length}} items in the bedroom</b>
+		<b>There are {{(things|filter:{room:'Bedroom'}).length}} items in the Bedroom</b>
 		<p ng-repeat="thing in things | filter:{room:'Bedroom'}">{{thing.item}} - {{thing.room}}</p>
 	</div>
 	</div>
