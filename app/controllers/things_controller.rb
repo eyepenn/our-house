@@ -5,6 +5,7 @@ class ThingsController < ApplicationController
 
   def create
     thing = Thing.create(thing_params)
+    thing.id
     render json: thing
   end
 
@@ -16,6 +17,10 @@ class ThingsController < ApplicationController
   def destroy
     thing = Thing.find(params[:id])
     thing.destroy
+    respond_to do |format|
+        format.html { render nothing: true }
+        format.js { render nothing: true }
+    end
   end
 
   private

@@ -1,9 +1,14 @@
 <div id="main">
 	<div id="left" class="form-group">
 		<h4>Add</h4>
-		<form class="form-inline" ng-submit="submit()" name="addForm" required>
-		<p><label>Item:</label> <input type="text"  placeholder="At least 3 characters" ng-model="item" name="item" ng-minlength="3" required /></p>
-		<label>Where:</label> <select class="form-control select_box" ng-model="room" name="room" ng-minlength="4" required /><option value ="" disabled ng-selected="true">Choose one</option>
+		<form class="form-inline" ng-submit="submit($index)" name="addForm" ng-model="addForm" />
+		<p><label>Item:</label> <input type="text" name="addItem" ng-model="item" ng-minlength="3" required /></p>
+		<div ng-messages="addForm.item.$error">
+			<div ng-message="required">This field is required</div>
+			<div ng-message="minlength">Message must be over 2 char</div>
+		</div>
+
+		<label>Where:</label> <select class="form-control select_box" name="addRoom" ng-model="room" ng-minlength="4" required /><option value ="" disabled ng-selected="true">Choose one</option>
 		<option value="Yard">Yard</option>
 		<option value="Living Room">Living Room</option>
 		<option value="Kitchen">Kitchen</option>
@@ -23,7 +28,6 @@
 	<div ng-bind="message" class="message">{{thing.warning}}</div>
 	<ul>
 	<li ng-repeat="thing in things"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</li>
-	<p>{{things.length}}</p>
 	</ul>
 	</div>
 	<section ng-init="tab = 1">
@@ -42,7 +46,6 @@
 	<div class="panel living" ng-show="tab === 2">
 		<b>There are {{(things|filter:{room:'Living Room'}).length}} items in the living room</b>
 			<p ng-repeat="thing in things | filter:{room:'Living Room'}">{{thing.item}} - {{thing.room}}</p>
-		</ul>
 	</div>
 	<div class="panel kitchen" ng-show="tab === 3">
 		<b>There are {{(things|filter:{room:'Kitchen'}).length}} items in the kitchen</b>
