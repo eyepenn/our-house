@@ -1,13 +1,9 @@
 <div id="main">
 	<div id="left" class="form-group">
 		<h4>Add:</h4>
-		<form class="form-inline" ng-submit="submit($index)" name="addForm" ng-model="addForm" />
-		<p><label>Item:</label> <input type="text" name="addItem" ng-model="item" ng-minlength="3" required /></p>
-		<div ng-messages="addForm.item.$error">
-			<div ng-message="required">This field is required</div>
-			<div ng-message="minlength">Message must be over 2 char</div>
-		</div>
-		<label>Where:</label> <select class="form-control select_box" name="addRoom" ng-model="room" ng-minlength="4" required /><option value ="" disabled ng-selected="true">Choose one</option>
+		<form class="form-inline" ng-submit="submit($index)" name="addForm" id="addForm" ng-model="addForm" />
+		<p><label>Item:</label> <input type="text" id="addItem" ng-model="item" placeholder=" At least 3 characters" required /><span ng-bind="alert" class="invalid"></span></p>
+		<label>Where:</label> <select class="form-control select_box" ng-model="room" required /><option value ="" disabled ng-selected="true">Choose one</option>
 		<option value="Yard">Yard</option>
 		<option value="Living Room">Living Room</option>
 		<option value="Kitchen">Kitchen</option>

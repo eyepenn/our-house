@@ -23,6 +23,12 @@ body {
 h4 {
 	margin:0px 0 12px 0;
 }
+.invalid {
+	color:red;
+	padding:0px 0 0 6px;
+	font-size:22px;
+	font-weight:bold;
+}
 #right {
 	float:left;
 }
@@ -87,15 +93,4 @@ h4 {
 a.red-x, a.red-x:hover, a.red-x:focus {
 	color:red;
 	text-decoration:none;
-}
-
-.test ul {
-	margin:6px 0 0 2px;
-	padding:0px;
-	list-style-type:none;
-}
-.test ul li {
-	margin:0px;
-	padding:0px;
-	text-transform:capitalize;
 }
