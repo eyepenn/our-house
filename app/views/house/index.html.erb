@@ -1,13 +1,12 @@
 <div id="main">
 	<div id="left" class="form-group">
-		<h4>Add</h4>
+		<h4>Add:</h4>
 		<form class="form-inline" ng-submit="submit($index)" name="addForm" ng-model="addForm" />
 		<p><label>Item:</label> <input type="text" name="addItem" ng-model="item" ng-minlength="3" required /></p>
 		<div ng-messages="addForm.item.$error">
 			<div ng-message="required">This field is required</div>
 			<div ng-message="minlength">Message must be over 2 char</div>
 		</div>
-
 		<label>Where:</label> <select class="form-control select_box" name="addRoom" ng-model="room" ng-minlength="4" required /><option value ="" disabled ng-selected="true">Choose one</option>
 		<option value="Yard">Yard</option>
 		<option value="Living Room">Living Room</option>
@@ -17,17 +16,11 @@
 		</select>
 		<div class="button"><button class="btn btn-primary" type="submit">Submit</button></div>
 		</form>
-		<h4>Search</h4>
+		<h4>Search:</h4>
 		<input type="text" class="search" ng-model="query" />
 			<p ng-show="query" ng-repeat="thing in things | filter:search" class="results">{{thing.item}} - {{thing.room}}</p>
 	</div>
 	<div id="right">
-	<div class="test">
-	<div ng-bind="message" class="message">{{thing.warning}}</div>
-	<ul>
-	<li ng-repeat="thing in things"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</li>
-	</ul>
-	</div>
 	<section ng-init="tab = 1">
 		<ul class="nav nav-tabs">
 		<li ng-class="{ active:tab === 1 }"><a href ng-click="tab = 1">Yard</a></li>
@@ -39,23 +32,23 @@
 	</section>
 	<div class="panel" ng-show="tab === 1">
 		<b>There are {{(things|filter:{room:'Yard'}).length}} items in the Yard</b>
-		<p ng-repeat="thing in things | filter:{room:'Yard'}">{{thing.item}} - {{thing.room}}</p>
+		<p ng-repeat="thing in things" ng-show="thing.room === 'Yard'"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</p>
 	</div>
 	<div class="panel living" ng-show="tab === 2">
 		<b>There are {{(things|filter:{room:'Living Room'}).length}} items in the Living Room</b>
-			<p ng-repeat="thing in things | filter:{room:'Living Room'}">{{thing.item}} - {{thing.room}}</p>
+			<p ng-repeat="thing in things" ng-show="thing.room === 'Living Room'"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</p>
 	</div>
 	<div class="panel kitchen" ng-show="tab === 3">
 		<b>There are {{(things|filter:{room:'Kitchen'}).length}} items in the Kitchen</b>
-		<p ng-repeat="thing in things | filter:{room:'Kitchen'}">{{thing.item}} - {{thing.room}}</p>
+		<p ng-repeat="thing in things"  ng-show="thing.room === 'Kitchen'"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</p>
 	</div>
 	<div class="panel bath" ng-show="tab === 4">
 		<b>There are {{(things|filter:{room:'Bathroom'}).length}} items in the Bathroom</b>
-		<p ng-repeat="thing in things | filter:{room:'Bathroom'}">{{thing.item}} - {{thing.room}}</p>
+		<p ng-repeat="thing in things" ng-show="thing.room === 'Bathroom'"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</p>
 	</div>
 	<div class="panel bed" ng-show="tab === 5">
 		<b>There are {{(things|filter:{room:'Bedroom'}).length}} items in the Bedroom</b>
-		<p ng-repeat="thing in things | filter:{room:'Bedroom'}">{{thing.item}} - {{thing.room}}</p>
+		<p ng-repeat="thing in things" ng-show="thing.room === 'Bedroom'"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</p>
 	</div>
 	</div>
 	<div class="clear_left"></div>

@@ -19,7 +19,7 @@ body {
 	width:200px;
 	margin-right:60px;
 	float:left;
-	}
+}
 h4 {
 	margin:0px 0 12px 0;
 }
@@ -41,9 +41,6 @@ h4 {
 }
 .search {
 	margin-bottom:6px;
-}
-.message {
-	color:red;
 }
 .form-inline .form-control {
     width: 138px;
@@ -68,7 +65,6 @@ h4 {
     background-color: #cbcbcb;
 	border-color:#949494;
 }
-
 .panel {
 	width:500px;
 	padding:14px;
@@ -88,6 +84,11 @@ h4 {
 	margin:4px 0 4px 10px;
 	text-transform:capitalize;
 }
+a.red-x, a.red-x:hover, a.red-x:focus {
+	color:red;
+	text-decoration:none;
+}
+
 .test ul {
 	margin:6px 0 0 2px;
 	padding:0px;
@@ -97,8 +98,4 @@ h4 {
 	margin:0px;
 	padding:0px;
 	text-transform:capitalize;
-}
-a.red-x, a.red-x:hover, a.red-x:focus {
-	color:red;
-	text-decoration:none;
 }
