@@ -5,7 +5,6 @@ class ThingsController < ApplicationController
 
   def create
     thing = Thing.create(thing_params)
-    thing.id
     render json: thing
   end
 

@@ -44,3 +44,7 @@ MethodLength:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+#Disables "Use keyword arguements instead of positional arguements for http call" warning
+Rails/HttpPositionalArguments:
+  Enabled: false
