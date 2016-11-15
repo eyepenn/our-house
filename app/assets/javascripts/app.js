@@ -14,7 +14,7 @@ angular.module('house', ['ngResource', 'ngRoute'])
 			Thing.save({ item: $scope.item, room: $scope.room }, function(data) {
             $scope.class = 'black';
       			$scope.things.push({id:data.id, item:data.item, room:data.room});
-            var rooms = ["", "Yard", "Living Room", "Kitchen", "Bathroom", "Bedroom"]
+            var rooms = ["default", "Yard", "Living Room", "Kitchen", "Bathroom", "Bedroom"]
             $scope.tab = rooms.indexOf($scope.room);
             $scope.item = {};
             $scope.room = '';
@@ -30,11 +30,11 @@ angular.module('house', ['ngResource', 'ngRoute'])
      	  });
       };
 
-       	$scope.search = function(thing){
-    		  if (!$scope.query || (thing.item.toLowerCase().indexOf($scope.query) != -1) || (thing.room.toLowerCase().indexOf($scope.query.toLowerCase()) != -1) ){
-         		return true;
-   		 	   }
-    	 		  return false;
+     $scope.search = function(thing){
+    		if (!$scope.query || (thing.item.toLowerCase().indexOf($scope.query) != -1) || (thing.room.toLowerCase().indexOf($scope.query.toLowerCase()) != -1) ){
+         	return true;
+   		 	}
+    	 		return false;
         };
 
 	}]);
