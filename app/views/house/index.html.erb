@@ -27,23 +27,23 @@
 		</ul>
 	</section>
 	<div class="panel" ng-show="tab === 1">
-		<b>There are {{(things|filter:{room:'Yard'}).length}} items in the Yard</b>
+		<b>Quantity: {{(things|filter:{room:'Yard'}).length}}</b>
 		<p ng-repeat="thing in things" ng-show="thing.room === 'Yard'"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</p>
 	</div>
-	<div class="panel living" ng-show="tab === 2">
-		<b>There are {{(things|filter:{room:'Living Room'}).length}} items in the Living Room</b>
+	<div class="panel" ng-show="tab === 2">
+		<b>Quantity: {{(things|filter:{room:'Living Room'}).length}}</b>
 			<p ng-repeat="thing in things" ng-show="thing.room === 'Living Room'"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</p>
 	</div>
-	<div class="panel kitchen" ng-show="tab === 3">
-		<b>There are {{(things|filter:{room:'Kitchen'}).length}} items in the Kitchen</b>
+	<div class="panel" ng-show="tab === 3">
+		<b>Quantity: {{(things|filter:{room:'Kitchen'}).length}}</b>
 		<p ng-repeat="thing in things"  ng-show="thing.room === 'Kitchen'"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</p>
 	</div>
-	<div class="panel bath" ng-show="tab === 4">
-		<b>There are {{(things|filter:{room:'Bathroom'}).length}} items in the Bathroom</b>
+	<div class="panel" ng-show="tab === 4">
+		<b>Quantity: {{(things|filter:{room:'Bathroom'}).length}}</b>
 		<p ng-repeat="thing in things" ng-show="thing.room === 'Bathroom'"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</p>
 	</div>
-	<div class="panel bed" ng-show="tab === 5">
-		<b>There are {{(things|filter:{room:'Bedroom'}).length}} items in the Bedroom</b>
+	<div class="panel" ng-show="tab === 5">
+		<b>Quantity: {{(things|filter:{room:'Bedroom'}).length}}</b>
 		<p ng-repeat="thing in things" ng-show="thing.room === 'Bedroom'"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</p>
 	</div>
 	</div>
