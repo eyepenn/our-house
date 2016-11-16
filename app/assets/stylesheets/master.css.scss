@@ -2,6 +2,7 @@ body {
 	padding:0px;
 	margin:0px;
 	background-color:#f5f5f5;
+	font-family:'myriad-pro-regular';
 }
 #brand {
 	font-size:32px;
@@ -28,6 +29,13 @@ h4 {
 }
 .black {
 	color:black;
+}
+label {
+	margin-right:7px;
+}
+#addItem {
+	width:148px;
+	padding:3px;
 }
 #right {
 	float:left;

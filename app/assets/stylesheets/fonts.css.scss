@@ -10,3 +10,16 @@
     font-style: normal;
 
 }
+
+@font-face {
+    font-family: 'myriad-pro-regular';
+    src: url('/assets/myriad-pro-regular.eot');
+    src: url('/assets/myriad-pro-regular?#iefix') format('embedded-opentype'),
+         url('/assets/myriad-pro-regular.woff2') format('woff2'),
+         url('/assets/myriad-pro-regular.woff') format('woff'),
+         url('/assets/myriad-pro-regular.ttf') format('truetype'),
+         url('/assets/myriad-pro-regular.svg#chunkfiveroman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
