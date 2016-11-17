@@ -6,21 +6,22 @@ angular.module('house', ['ngResource', 'ngRoute'])
 		var Thing = $resource('/things/:id', { id:'@id' });
 
      $scope.things = Thing.query();
+     var rooms = ["default", "Yard", "Living Room", "Kitchen", "Bathroom", "Bedroom"]
+
  		 
      $scope.submit = function() {
-       if($scope.item.length <  3) {
-            $scope.class = 'red';    
-       } else {
-			Thing.save({ item: $scope.item, room: $scope.room }, function(data) {
+       if($scope.item.length > 2 && $scope.room.length > 3 ) {
+          Thing.save({ item: $scope.item, room: $scope.room }, function(data) {
             $scope.class = 'black';
-      			$scope.things.push({id:data.id, item:data.item, room:data.room});
-            var rooms = ["default", "Yard", "Living Room", "Kitchen", "Bathroom", "Bedroom"]
+            $scope.things.push({id:data.id, item:data.item, room:data.room});
             $scope.tab = rooms.indexOf($scope.room);
-            $scope.item = {};
+            $scope.item = '';
             $scope.room = '';
-   				  $scope.addForm.$setPristine();
+            $scope.addForm.$setPristine();
             $scope.addForm.$setUntouched();
-    		});
+          });       
+       } else {
+			$scope.class = 'red'; 
       };
        	 };
 
