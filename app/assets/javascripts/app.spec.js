@@ -32,8 +32,10 @@ describe('ThingsListController', function() {
 
 	}));
 
+	
+
 });
-//test that array = length of 3 (sorta finished)
+
 
 
 //test form submission
