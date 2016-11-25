@@ -12,6 +12,7 @@ angular.module('house', ['ngResource', 'ngRoute'])
      $scope.submit = function() {
        if($scope.item.length > 2 && $scope.room.length > 3 ) {
           Thing.save({ item: $scope.item, room: $scope.room }, function(data) {
+            console.log(data);
             $scope.class = 'black';
             $scope.things.push({id:data.id, item:data.item, room:data.room});
             $scope.tab = rooms.indexOf($scope.room);

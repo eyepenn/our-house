@@ -2,17 +2,15 @@
 module.exports = function(config) {
   config.set({
 
-    basePath: './app/assets/javascripts',
+    basePath: '.',
 
     files: [
-      'angular.js',
-      'angular-route.js',
-      'angular-mocks.js',      
-      'angular-resource.js',
-      '**/*.module.js',
-      '*!(.module|.spec).js',
-      '!(bower_components)/**/*!(.module|.spec).js',
-      '**/*.spec.js'
+      'app/assets/javascripts/angular.js',
+      'app/assets/javascripts/angular-route.js',
+      'app/assets/javascripts/angular-mocks.js',      
+      'app/assets/javascripts/angular-resource.js',
+      'app/assets/javascripts/*.js',
+      'specjs/*.spec.js'
     ],
 
     autoWatch: true,
