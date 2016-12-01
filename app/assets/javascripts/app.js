@@ -1,34 +1,36 @@
 (function(){
 
-angular.module('house', ['ngResource', 'ngRoute'])
+angular.module('house', ['ngResource', 'ngRoute', 'thingsService'])
 
-	.controller('ThingsListController', ['$scope', '$resource', function ($scope, $resource) {
+	.controller('ThingsListController', ['$scope', '$resource', 'things', function ($scope, $resource, things) {
 		var Thing = $resource('/things/:id', { id:'@id' });
-
-     $scope.things = Thing.query();
+     $scope.things = things;
+     $scope.item = '';
+     $scope.room = '';
+     things.collection = Thing.query();
      var rooms = ["default", "Yard", "Living Room", "Kitchen", "Bathroom", "Bedroom"]
 
  		 
      $scope.submit = function() {
-       if($scope.item.length > 2 && $scope.room.length > 3 ) {
-          Thing.save({ item: $scope.item, room: $scope.room }, function(data) {
-            console.log(data);
+      console.log($scope.item);
+      console.log($scope.room);
+      if($scope.item.length > 2 && $scope.room.length > 3 ) {
+      things.submit($scope.item, $scope.room, function(data){
             $scope.class = 'black';
-            $scope.things.push({id:data.id, item:data.item, room:data.room});
             $scope.tab = rooms.indexOf($scope.room);
             $scope.item = '';
             $scope.room = '';
             $scope.addForm.$setPristine();
             $scope.addForm.$setUntouched();
-          });       
-       } else {
-			$scope.class = 'red'; 
+            });
+      } else {
+      $scope.class = 'red';
       };
        	 };
 
      $scope.remove = function(thing, $index) {
 			 Thing.delete({ id: thing.id }, function() {
-				 $scope.things.splice($index, 1);
+				 things.collection.splice($index, 1);
      	  });
       };
 

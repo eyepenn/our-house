@@ -14,7 +14,7 @@
 		</form>
 		<h4>Search:</h4>
 		<input type="text" class="search" ng-model="query" />
-			<p ng-show="query" ng-repeat="thing in things | filter:search" class="results">{{thing.item}} - {{thing.room}}</p>
+			<p ng-show="query" ng-repeat="thing in things.collection | filter:search" class="results">{{thing.item}} - {{thing.room}}</p>
 	</div>
 	<div id="right">
 	<section ng-init="tab = 1">
@@ -27,24 +27,24 @@
 		</ul>
 	</section>
 	<div class="panel" ng-show="tab === 1">
-		<b>Quantity: {{(things|filter:{room:'Yard'}).length}}</b>
-		<p ng-repeat="thing in things" ng-show="thing.room === 'Yard'"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</p>
+		<b>Quantity: {{(things.collection|filter:{room:'Yard'}).length}}</b>
+		<p ng-repeat="thing in things.collection" ng-show="thing.room === 'Yard'"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</p>
 	</div>
 	<div class="panel" ng-show="tab === 2">
-		<b>Quantity: {{(things|filter:{room:'Living Room'}).length}}</b>
-			<p ng-repeat="thing in things" ng-show="thing.room === 'Living Room'"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</p>
+		<b>Quantity: {{(things.collection|filter:{room:'Living Room'}).length}}</b>
+			<p ng-repeat="thing in things.collection" ng-show="thing.room === 'Living Room'"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</p>
 	</div>
 	<div class="panel" ng-show="tab === 3">
-		<b>Quantity: {{(things|filter:{room:'Kitchen'}).length}}</b>
-		<p ng-repeat="thing in things"  ng-show="thing.room === 'Kitchen'"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</p>
+		<b>Quantity: {{(things.collection|filter:{room:'Kitchen'}).length}}</b>
+		<p ng-repeat="thing in things.collection"  ng-show="thing.room === 'Kitchen'"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</p>
 	</div>
 	<div class="panel" ng-show="tab === 4">
-		<b>Quantity: {{(things|filter:{room:'Bathroom'}).length}}</b>
-		<p ng-repeat="thing in things" ng-show="thing.room === 'Bathroom'"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</p>
+		<b>Quantity: {{(things.collection|filter:{room:'Bathroom'}).length}}</b>
+		<p ng-repeat="thing in things.collection" ng-show="thing.room === 'Bathroom'"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</p>
 	</div>
 	<div class="panel" ng-show="tab === 5">
-		<b>Quantity: {{(things|filter:{room:'Bedroom'}).length}}</b>
-		<p ng-repeat="thing in things" ng-show="thing.room === 'Bedroom'"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</p>
+		<b>Quantity: {{(things.collection|filter:{room:'Bedroom'}).length}}</b>
+		<p ng-repeat="thing in things.collection" ng-show="thing.room === 'Bedroom'"><a href ng-click="remove(thing, $index)" class="red-x">&#10005;</a> {{thing.item}} - {{thing.room}}</p>
 	</div>
 	</div>
 	<div class="clear_left"></div>
